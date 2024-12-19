@@ -1,0 +1,22 @@
+version: '3.9'  # Versi Docker Compose
+services:
+  web:
+    image: nginx:latest  # Menggunakan image NGINX
+    ports:
+      - "8080:80"  # Akses NGINX melalui localhost:8080
+    volumes:
+      - ./html:/usr/share/nginx/html  # Folder lokal untuk file web
+    networks:
+      - mynetwork
+  database:
+    image: mysql:latest  # Menggunakan image MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: password  # Password root MySQL
+      MYSQL_DATABASE: mydb  # Nama database
+    ports:
+      - "3306:3306"  # Akses MySQL melalui localhost:3306
+    networks:
+      - mynetwork
+networks:
+  mynetwork:  # Jaringan internal antara web dan database
+    driver: bridge

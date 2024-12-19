@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top-Up Game</title>
+    <style>
+        body {
+            font-family: Times New Roman, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+        }
+        header {
+            background-color: #ff9900;
+            color: rgb(32, 30, 30);
+            text-align: center;
+            padding: 1rem 0;
+        }
+        main {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: rgb(119, 118, 116);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input, select, button {
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #f8ffff;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #045f5f;
+            color: rgb(252, 252, 252);
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Top-Up Game</h1>
+    </header>
+    <main>
+        <h2>Isi Data Pemain</h2>
+        <form action="/topup" method="POST">
+            <label for="game-id">ID Pemain</label>
+            <input type="text" id="game-id" name="game_id" placeholder="Masukkan ID Pemain" required>
+
+            <label for="game">Pilih Game</label>
+            <select id="game" name="game" required>
+                <option value="" disabled selected>Pilih Game</option>
+                <option value="game1">Mobile Legends</option>
+                <option value="game2">Free Fire</option>
+                <option value="game3">PUBG Mobile</option>
+                <option value="game4">Genshin Impact</option>
+            </select>
+
+            <label for="amount">Nominal Top-Up</label>
+            <select id="amount" name="amount" required>
+                <option value="" disabled selected>Pilih Nominal</option>
+                <option value="10">10 Diamonds</option>
+                <option value="50">50 Diamonds</option>
+                <option value="100">100 Diamonds</option>
+                <option value="500">500 Diamonds</option>
+            </select>
+
+            <button type="submit">Top-Up Sekarang</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Top-Up Game | All rights reserved</p>
+    </footer>
+</body>
+</html>
