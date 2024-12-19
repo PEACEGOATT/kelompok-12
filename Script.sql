@@ -1,0 +1,3 @@
+USE mydb;
+SHOW TABLES;
+SELECT * FROM users;
